@@ -1,0 +1,13 @@
+h5py
+numba==0.45.0
+librosa
+matplotlib
+numpy
+pandas
+Pillow
+scikit-learn
+scipy
+seaborn
+torch
+torchvision
+tqdm
