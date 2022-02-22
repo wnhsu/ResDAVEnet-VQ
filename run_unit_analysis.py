@@ -23,6 +23,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Dataset Utils #
 #################
 def get_inp_feat(dataset, index):
+    if isinstance(dataset, dataloaders.ImageCaptionDataset):
+        index = os.path.join(dataset.audio_base_path, dataset.data[index]['wav'])
     mels, nframes = dataset._LoadAudio(index)
     mels = mels[:, :nframes]
     # print('FEAT : idx=%d, mel=%s, nframes=%s' % (index, mels.size(), nframes))
